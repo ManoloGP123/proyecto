@@ -15,6 +15,7 @@ public class DAOLendingsImpl extends Database implements DAOLendings {
     @Override
     public void registrar(Lendings lending) throws Exception {
         try {
+            System.out.println("este es un nuevo mensaje");
             this.Conectar();
             PreparedStatement st = this.conexion.prepareStatement("INSERT INTO lendings(user_id, book_id, date_out) VALUES(?,?,?);");
             st.setInt(1, lending.getUser_id());
