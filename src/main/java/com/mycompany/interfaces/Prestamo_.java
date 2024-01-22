@@ -5,7 +5,7 @@ import com.mycompany.models.Lendings;
 import com.mycompany.models.Users;
 import java.util.List;
 
-public interface DAOLendings {
+public interface Prestamo_ {
     public void registrar(Lendings lending) throws Exception;
     public void modificar(Lendings lending) throws Exception;
     public Lendings getLending(Users user, Books book) throws Exception;

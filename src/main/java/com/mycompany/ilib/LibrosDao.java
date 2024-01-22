@@ -1,14 +1,14 @@
 package com.mycompany.ilib;
 
 import com.mycompany.db.Database;
-import com.mycompany.interfaces.DAOBooks;
 import com.mycompany.models.Books;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import com.mycompany.interfaces.Libros_;
 
-public class DAOBooksImpl extends Database implements DAOBooks {
+public class LibrosDao extends Database implements Libros_ {
 
     @Override
     public void registrar(Books book) throws Exception {

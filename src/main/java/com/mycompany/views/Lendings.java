@@ -5,32 +5,26 @@ import com.mycompany.ilib.PrestamosDao;
 import com.mycompany.ilib.DAOUserslmpl;
 import com.mycompany.utils.Utils;
 import java.awt.Color;
-import java.util.Date;
 import com.mycompany.interfaces.Libros_;
 import com.mycompany.interfaces.Prestamo_;
 import com.mycompany.interfaces.Usuarios_;
 
-public class Returns extends javax.swing.JPanel {
+public class Lendings extends javax.swing.JPanel {
 
-    private final int MAX_DAYS_RETURN = 5;
-    private final int COST_DAY_SANC = 10;
-    
-    public Returns() {
+    public Lendings() {
         initComponents();
         InitStyles();
     }
-    
+
     private void InitStyles() {
-        title.putClientProperty("FlatLaf.style", "font: 24 $light.font");
-        title.setForeground(Color.black);
         folioLbl.putClientProperty("FlatLaf.styleClass", "large");
         folioLbl.setForeground(Color.black);
         libroIdLbl.putClientProperty("FlatLaf.styleClass", "large");
         libroIdLbl.setForeground(Color.black);
         folioTxt.putClientProperty("JTextField.placeholderText", "Ingrese el folio del usuario.");
-        libroIdTxt.putClientProperty("JTextField.placeholderText", "Ingrese el ID del Libro a devolver.");
+        libroIdTxt.putClientProperty("JTextField.placeholderText", "Ingrese el ID del Libro a prestar.");
     }
-   
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,7 +36,6 @@ public class Returns extends javax.swing.JPanel {
 
         bg = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
-        title = new javax.swing.JLabel();
         folioLbl = new javax.swing.JLabel();
         folioTxt = new javax.swing.JTextField();
         libroIdLbl = new javax.swing.JLabel();
@@ -50,7 +43,6 @@ public class Returns extends javax.swing.JPanel {
         button = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(750, 430));
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -58,16 +50,16 @@ public class Returns extends javax.swing.JPanel {
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator1.setPreferredSize(new java.awt.Dimension(200, 10));
 
-        title.setText("Devolución de Libro");
-
         folioLbl.setText("Id Usuario");
+
+        folioTxt.setToolTipText("");
 
         libroIdLbl.setText("Libro ID");
 
         button.setBackground(new java.awt.Color(0, 0, 0));
         button.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         button.setForeground(new java.awt.Color(255, 255, 255));
-        button.setText("Devolver");
+        button.setText("Prestar");
         button.setBorderPainted(false);
         button.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         button.addActionListener(new java.awt.event.ActionListener() {
@@ -81,44 +73,43 @@ public class Returns extends javax.swing.JPanel {
         bgLayout.setHorizontalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(36, 36, 36)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(folioTxt)
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addComponent(libroIdLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 459, Short.MAX_VALUE)
+                                .addGap(223, 223, 223))
+                            .addComponent(libroIdTxt)
+                            .addComponent(button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(20, 20, 20))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(folioLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(199, 199, 199))
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(167, 167, 167))
-                    .addComponent(folioTxt)
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(libroIdLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(223, 223, 223))
-                    .addComponent(libroIdTxt)
-                    .addComponent(button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(31, 31, 31)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(409, 409, 409))
+                        .addGap(42, 42, 42))))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(20, 20, 20)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(63, 63, 63)
                         .addComponent(folioLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(46, 46, 46)
                         .addComponent(folioTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(30, 30, 30)
                         .addComponent(libroIdLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(16, 16, 16)
                         .addComponent(libroIdTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53)
+                        .addGap(50, 50, 50)
                         .addComponent(button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(22, 22, 22)))
-                .addGap(69, 69, 69))
+                        .addGap(110, 110, 110))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(60, 60, 60))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -126,16 +117,16 @@ public class Returns extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
+                .addGap(115, 115, 115)
                 .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(264, 264, 264))
+                .addGap(564, 564, 564))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(39, 39, 39))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -178,41 +169,37 @@ public class Returns extends javax.swing.JPanel {
                 libroIdTxt.requestFocus();
                 return;
             }
+            // Validamos disponibilidad del libro.
+            else if (currentBook.getAvailable() < 1) {
+                javax.swing.JOptionPane.showMessageDialog(this, "Ya no hay más libros disponibles con esa ID para prestar. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
+                libroIdTxt.requestFocus();
+                return;
+            }
             
             Prestamo_ daoLendings = new PrestamosDao();
             
-            // Validamos que el usuario tenga ese libro prestado.
+            // Validamos que el usuario no tenga ya ese libro prestado.
             com.mycompany.models.Lendings currentLending = daoLendings.getLending(currentUser, currentBook);
-            if (currentLending == null) {
-                javax.swing.JOptionPane.showMessageDialog(this, "No se ha podido encontrar el préstamo correspiendote a los datos ingresados. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
+            if (currentLending != null) {
+                javax.swing.JOptionPane.showMessageDialog(this, "Esa persona ya cuenta con el préstamo de ese mismo Libro. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
                 libroIdTxt.requestFocus();
                 return;
             }
 
-            // Todo OK: Devolvemos libro.
-            currentLending.setDate_return(Utils.getFechaActual());
-            daoLendings.modificar(currentLending);
+            // Todo OK: Prestamos libro.
+            com.mycompany.models.Lendings lending = new com.mycompany.models.Lendings();
+            lending.setBook_id(currentBook.getId());
+            lending.setUser_id(currentUser.getId());
+            lending.setDate_out(Utils.getFechaActual());
+            daoLendings.registrar(lending);
             
-            // Modificamos el libro sumandole 1 en disponibilidad.
-            currentBook.setAvailable(currentBook.getAvailable() + 1);
+            // Modificamos el libro restandole 1 en disponibilidad.
+            currentBook.setAvailable(currentBook.getAvailable() - 1);
             daoBooks.modificar(currentBook);
             
-            javax.swing.JOptionPane.showMessageDialog(this, "Libro ID: " + currentBook.getId() + " devuelto exitosamente por " + currentUser.getName() + ".\n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this, "Libro ID: " + currentBook.getId() + " prestado exitosamente a " + currentUser.getName() + ".\n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
             folioTxt.setText("");
             libroIdTxt.setText("");
-            
-            // Verificamos sanciones
-            int days = Utils.diferenciasDeFechas(Utils.stringToDate(currentLending.getDate_out()), new Date());
-            if (days > MAX_DAYS_RETURN) {
-                int daysDelayed = days - MAX_DAYS_RETURN;
-                int sancMoney = daysDelayed * COST_DAY_SANC;
-                
-                // Aumentamos sanción del usuario y en dinero.
-                currentUser.setSanctions(currentUser.getSanctions() + 1);
-                currentUser.setSanc_money(currentUser.getSanc_money() + sancMoney);
-                daoUsers.sancionar(currentUser);
-                javax.swing.JOptionPane.showMessageDialog(this, "¡USUARIO SANCIONADO POR ENTREGA A DESTIEMPO! ($" + sancMoney + ") \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-            }
         } catch (Exception e) {
             javax.swing.JOptionPane.showMessageDialog(this, "Ocurrió un error al prestar el libro. \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
             System.out.println(e.getMessage());
@@ -227,6 +214,5 @@ public class Returns extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel libroIdLbl;
     private javax.swing.JTextField libroIdTxt;
-    private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,7 +1,6 @@
 package com.mycompany.ilib;
 
 import com.mycompany.db.Database;
-import com.mycompany.interfaces.DAOLendings;
 import com.mycompany.models.Books;
 import com.mycompany.models.Lendings;
 import com.mycompany.models.Users;
@@ -9,8 +8,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import com.mycompany.interfaces.Prestamo_;
 
-public class DAOLendingsImpl extends Database implements DAOLendings {
+public class PrestamosDao extends Database implements Prestamo_ {
 
     @Override
     public void registrar(Lendings lending) throws Exception {

@@ -57,7 +57,6 @@ public class Principal extends javax.swing.JPanel {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        image = new javax.swing.JLabel();
         title = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -73,9 +72,6 @@ public class Principal extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
-
-        image.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/336799ebb339821f342bc5a13386aff2.jpg"))); // NOI18N
 
         title.setText("Bienvenido");
 
@@ -107,7 +103,7 @@ public class Principal extends javax.swing.JPanel {
                 .addGap(20, 20, 20)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(title, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                        .addComponent(title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(500, 500, 500))
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -131,11 +127,7 @@ public class Principal extends javax.swing.JPanel {
                     .addGroup(bgLayout.createSequentialGroup()
                         .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(306, 306, 306)))
-                .addGap(10, 10, 10))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(image, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(312, 312, 312))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,36 +143,34 @@ public class Principal extends javax.swing.JPanel {
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGap(155, 155, 155)
                         .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(75, 75, 75))
+                        .addGap(105, 105, 105))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(210, 210, 210))
+                        .addGap(240, 240, 240))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGap(75, 75, 75)
                         .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(155, 155, 155))
+                        .addGap(185, 185, 185))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGap(175, 175, 175)
                         .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(55, 55, 55))
+                        .addGap(85, 85, 85))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGap(135, 135, 135)
                         .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(95, 95, 95))
-                    .addComponent(image, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addGap(125, 125, 125))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(230, 230, 230))
+                        .addGap(260, 260, 260))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGap(95, 95, 95)
                         .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(135, 135, 135))
+                        .addGap(165, 165, 165))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGap(115, 115, 115)
                         .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(115, 115, 115)))
-                .addGap(30, 30, 30))
+                        .addGap(145, 145, 145))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -202,7 +192,6 @@ public class Principal extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
-    private javax.swing.JLabel image;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
